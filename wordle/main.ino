@@ -1,6 +1,6 @@
 #include "word.h"
 
-char keys[16] = {'A','B','C','D','E','F','G','H','I','J','M','N','O','P','S','R'};
+char keys[16] = {'A','B','C','D','E','F','G','H','I','J','M','N','O','P','S','='};
 char ans[5];
 char *wor = wordle();
 char count =0;
@@ -77,10 +77,10 @@ void keypad(){
    while(count<5){
     while(x==0 && count<5){
       x = scan_keypad();
-      delay2();
+      delay1();
     }
     
-    if(c==4){
+    if(keys[x-1]=='='){
       count++;
       check();
     }else{
@@ -228,11 +228,6 @@ void dec_cursor(){
 void delay1(){
   volatile long i;
   for(i=0;i<10000;i++);
-}
-
-void delay2(){
-  volatile long i;
-  for(i=0;i<50000;i++);
 }
 
 void loop() {
