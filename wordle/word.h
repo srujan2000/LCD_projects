@@ -1,0 +1,3 @@
+char *wordle(){
+  return "CHAMP";
+}
